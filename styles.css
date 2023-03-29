@@ -8,6 +8,7 @@ body {
     padding: 0;
     background: #f3f3f4;
     color: #333333;
+    max-width: 100%
 }
 
 /*----------- Content styles -----------*/
@@ -282,8 +283,8 @@ button {
 @media (max-width: 1025px)  {
     
     .top_progress_bar {
-        background-color: #576071;
-        color: white;
+        background-color: #333333;
+        color: #f3f3f4;
         position: fixed;
         padding-top: 1vh;
         padding-bottom: 1vh;
