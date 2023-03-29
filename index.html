@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual Gifts Test</title>
+    <link rel = "stylesheet" href = "styles.css">
+    <script defer src = "script.js"></script>
+</head>
+<body>
+    <div id = "giftsassesspage" class = "giftstestpage">
+        <h1 class = "heading"> Spiritual Gifts Test</h1>
+        <p id = "intro" class = "intro">Respond to the spiritual gifts statements in the Spiritual
+                Assessment by selecting the number that indicates how each statement
+                describes you.<br><br>
+                1 - Almost Never<br>
+                2 - Sometimes<br>
+                3 - Almost Always<br>
+        </p>
+        <div id = "container" class = "container"> 
+            <button id ="getstarted" class = "btn" onclick="getstarted()">Get Started</button>
+            <div id ="question-container" class = "hide">
+                <div id = "questions" class = "questiongrid">
+                    <div class = "top_progress_bar">Progress: <progress id ="progbar" min="0.0" max="100.0" value="0.0"></progress></div>
+                    <ol class = "question-list">
+                        <div id = "intro" style="border: 1px solid black; display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+                            <div style="padding: 10px;">1. Almost Never</div>
+                            <div style="padding: 10px;">2. Sometimes</div>
+                            <div style="padding: 10px;">3. Almost Always</div>
+                        </div>
+                        <br><br>
+                        <div id ="set1" class = "set1">
+                            <li>I like organizing services and events 
+                                <br><br>
+                                <div class = "radioinputs" oninput="making_progress">
+                                    <input class = "radio__input" type="radio" name="q1" value="1" id = "myradio1"/><label class = "radio__label" for="myradio1">1</label> 
+                                    <input class = "radio__input" type="radio" name="q1" value="2" id = "myradio2"/><label class = "radio__label" for="myradio2">2</label>
+                                    <input class = "radio__input" type="radio" name="q1" value="3" id = "myradio3"/><label class = "radio__label" for="myradio3">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I am interested in starting new churches
+                                <br><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q2" value="1" id = "myradio4"/><label class = "radio__label" for="myradio4">1</label> 
+                                    <input class = "radio__input" type="radio" name="q2" value="2" id = "myradio5"/><label class = "radio__label" for="myradio5">2</label>
+                                    <input class = "radio__input" type="radio" name="q2" value="3" id = "myradio6"/><label class = "radio__label" for="myradio6">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I enjoy working with my hands
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q3" value="1" id = "myradio7"/><label class = "radio__label" for="myradio7">1</label> 
+                                    <input class = "radio__input" type="radio" name="q3" value="2" id = "myradio8"/><label class = "radio__label" for="myradio8">2</label>
+                                    <input class = "radio__input" type="radio" name="q3" value="3" id = "myradio9"/><label class = "radio__label" for="myradio9">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I can tell when someone is insincere
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q4" value="1" id = "myradio10"/><label class = "radio__label" for="myradio10">1</label> 
+                                    <input class = "radio__input" type="radio" name="q4" value="2" id = "myradio11"/><label class = "radio__label" for="myradio11">2</label>
+                                    <input class = "radio__input" type="radio" name="q4" value="3" id = "myradio12"/><label class = "radio__label" for="myradio12">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I pray daily for people who don't know Jesus
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q5" value="1" id = "myradio13"/><label class = "radio__label" for="myradio13">1</label> 
+                                    <input class = "radio__input" type="radio" name="q5" value="2" id = "myradio14"/><label class = "radio__label" for="myradio14">2</label>
+                                    <input class = "radio__input" type="radio" name="q5" value="3" id = "myradio15"/><label class = "radio__label" for="myradio15">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>Encouraging others is is a high priority in my life 
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q6" value="1" id = "myradio16"/><label class = "radio__label" for="myradio16">1</label> 
+                                    <input class = "radio__input" type="radio" name="q6" value="2" id = "myradio17"/><label class = "radio__label" for="myradio17">2</label>
+                                    <input class = "radio__input" type="radio" name="q6" value="3" id = "myradio18"/><label class = "radio__label" for="myradio18">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I trust God to provide for my daily needs
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q7" value="1" id = "myradio19"/><label class = "radio__label" for="myradio19">1</label> 
+                                    <input class = "radio__input" type="radio" name="q7" value="2" id = "myradio20"/><label class = "radio__label" for="myradio20">2</label>
+                                    <input class = "radio__input" type="radio" name="q7" value="3" id = "myradio21"/><label class = "radio__label" for="myradio21">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I am passionate about financially investing in the Kingdom of God
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q8" value="1" id = "myradio22"/><label class = "radio__label" for="myradio22">1</label> 
+                                    <input class = "radio__input" type="radio" name="q8" value="2" id = "myradio23"/><label class = "radio__label" for="myradio23">2</label>
+                                    <input class = "radio__input" type="radio" name="q8" value="3" id = "myradio24"/><label class = "radio__label" for="myradio24">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I look for opportunities to pray for the sick
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q9" value="1" id = "myradio25"/><label class = "radio__label" for="myradio25">1</label> 
+                                    <input class = "radio__input" type="radio" name="q9" value="2" id = "myradio26"/><label class = "radio__label" for="myradio26">2</label>
+                                    <input class = "radio__input" type="radio" name="q9" value="3" id = "myradio27"/><label class = "radio__label" for="myradio27">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I enjoy doing little things that others typically do not enjoy
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q10" value="1" id = "myradio28"/><label class = "radio__label" for="myradio28">1</label> 
+                                    <input class = "radio__input" type="radio" name="q10" value="2" id = "myradio29"/><label class = "radio__label" for="myradio29">2</label>
+                                    <input class = "radio__input" type="radio" name="q10" value="3" id = "myradio30"/><label class = "radio__label" for="myradio30">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                        </div>
+                        <div id = "set2" class = "set1 hide">
+                            <li>I often have people over to my house 
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q11" value="1" id = "myradio31"/><label class = "radio__label" for="myradio31">1</label> 
+                                    <input class = "radio__input" type="radio" name="q11" value="2" id = "myradio32"/><label class = "radio__label" for="myradio32">2</label>
+                                    <input class = "radio__input" type="radio" name="q11" value="3" id = "myradio33"/><label class = "radio__label" for="myradio33">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>I enjoy spending hours in prayer for other people 
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q12" value="1" id = "myradio34"/><label class = "radio__label" for="myradio34">1</label> 
+                                    <input class = "radio__input" type="radio" name="q12" value="2" id = "myradio35"/><label class = "radio__label" for="myradio35">2</label>
+                                    <input class = "radio__input" type="radio" name="q12" value="3" id = "myradio36"/><label class = "radio__label" for="myradio36">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>Education is very important to me
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q13" value="1" id = "myradio37"/><label class = "radio__label" for="myradio37">1</label> 
+                                    <input class = "radio__input" type="radio" name="q13" value="2" id = "myradio38"/><label class = "radio__label" for="myradio38">2</label>
+                                    <input class = "radio__input" type="radio" name="q13" value="3" id = "myradio39"/><label class = "radio__label" for="myradio39">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I tend to motivate others to get involved
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q14" value="1" id = "myradio40"/><label class = "radio__label" for="myradio40">1</label> 
+                                    <input class = "radio__input" type="radio" name="q14" value="2" id = "myradio41"/><label class = "radio__label" for="myradio41">2</label>
+                                    <input class = "radio__input" type="radio" name="q14" value="3" id = "myradio42"/><label class = "radio__label" for="myradio42">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I hurt when I see others hurting
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q15" value="1" id = "myradio43"/><label class = "radio__label" for="myradio43">1</label> 
+                                    <input class = "radio__input" type="radio" name="q15" value="2" id = "myradio44"/><label class = "radio__label" for="myradio44">2</label>
+                                    <input class = "radio__input" type="radio" name="q15" value="3" id = "myradio45"/><label class = "radio__label" for="myradio45">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I believe that God will use me to enact His miracles 
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q16" value="1" id = "myradio46"/><label class = "radio__label" for="myradio46">1</label> 
+                                    <input class = "radio__input" type="radio" name="q16" value="2" id = "myradio47"/><label class = "radio__label" for="myradio47">2</label>
+                                    <input class = "radio__input" type="radio" name="q16" value="3" id = "myradio48"/><label class = "radio__label" for="myradio48">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I enjoy sharing the Gospel with other people groups and nationalities
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q17" value="1" id = "myradio49"/><label class = "radio__label" for="myradio49">1</label> 
+                                    <input class = "radio__input" type="radio" name="q17" value="2" id = "myradio50"/><label class = "radio__label" for="myradio50">2</label>
+                                    <input class = "radio__input" type="radio" name="q17" value="3" id = "myradio51"/><label class = "radio__label" for="myradio51">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I've devoted considerable time to mastering my voice and/or musical instrument
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q18" value="1" id = "myradio52"/><label class = "radio__label" for="myradio52">1</label> 
+                                    <input class = "radio__input" type="radio" name="q18" value="2" id = "myradio53"/><label class = "radio__label" for="myradio53">2</label>
+                                    <input class = "radio__input" type="radio" name="q18" value="3" id = "myradio54"/><label class = "radio__label" for="myradio54">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>Caring for those who are hurting is one of my highest priorities
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q19" value="1" id = "myradio55"/><label class = "radio__label" for="myradio55">1</label> 
+                                    <input class = "radio__input" type="radio" name="q19" value="2" id = "myradio56"/><label class = "radio__label" for="myradio56">2</label>
+                                    <input class = "radio__input" type="radio" name="q19" value="3" id = "myradio57"/><label class = "radio__label" for="myradio57">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I get frustrated when people knowingly sin
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q20" value="1" id = "myradio58"/><label class = "radio__label" for="myradio58">1</label> 
+                                    <input class = "radio__input" type="radio" name="q20" value="2" id = "myradio59"/><label class = "radio__label" for="myradio59">2</label>
+                                    <input class = "radio__input" type="radio" name="q20" value="3" id = "myradio60"/><label class = "radio__label" for="myradio60">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>    
+                        </div>
+                        <div id = "set3" class = "set1 hide">
+                            <li>I enjoy serving behind the scenes
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q21" value="1" id = "myradio61"/><label class = "radio__label" for="myradio61">1</label> 
+                                    <input class = "radio__input" type="radio" name="q21" value="2" id = "myradio62"/><label class = "radio__label" for="myradio62">2</label>
+                                    <input class = "radio__input" type="radio" name="q21" value="3" id = "myradio63"/><label class = "radio__label" for="myradio63">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>I like creating outlines of the bible
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q22" value="1" id = "myradio64"/><label class = "radio__label" for="myradio64">1</label> 
+                                    <input class = "radio__input" type="radio" name="q22" value="2" id = "myradio65"/><label class = "radio__label" for="myradio65">2</label>
+                                    <input class = "radio__input" type="radio" name="q22" value="3" id = "myradio66"/><label class = "radio__label" for="myradio66">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>God has used me to interpret what someone speaking in tongues is saying
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q23" value="1" id = "myradio67"/><label class = "radio__label" for="myradio67">1</label> 
+                                    <input class = "radio__input" type="radio" name="q23" value="2" id = "myradio68"/><label class = "radio__label" for="myradio68">2</label>
+                                    <input class = "radio__input" type="radio" name="q23" value="3" id = "myradio69"/><label class = "radio__label" for="myradio69">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I enjoy the book of proverbs more than any other book in the bible
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q24" value="1" id = "myradio70"/><label class = "radio__label" for="myradio70">1</label> 
+                                    <input class = "radio__input" type="radio" name="q24" value="2" id = "myradio71"/><label class = "radio__label" for="myradio71">2</label>
+                                    <input class = "radio__input" type="radio" name="q24" value="3" id = "myradio72"/><label class = "radio__label" for="myradio72">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I am passionate about managing details
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q25" value="1" id = "myradio73"/><label class = "radio__label" for="myradio73">1</label> 
+                                    <input class = "radio__input" type="radio" name="q25" value="2" id = "myradio74"/><label class = "radio__label" for="myradio74">2</label>
+                                    <input class = "radio__input" type="radio" name="q25" value="3" id = "myradio75"/><label class = "radio__label" for="myradio75">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I like to help start new ministry projects
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q26" value="1" id = "myradio76"/><label class = "radio__label" for="myradio76">1</label> 
+                                    <input class = "radio__input" type="radio" name="q26" value="2" id = "myradio77"/><label class = "radio__label" for="myradio77">2</label>
+                                    <input class = "radio__input" type="radio" name="q26" value="3" id = "myradio78"/><label class = "radio__label" for="myradio78">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I consider myself a craftsman or craftswoman
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q27" value="1" id = "myradio79"/><label class = "radio__label" for="myradio79">1</label> 
+                                    <input class = "radio__input" type="radio" name="q27" value="2" id = "myradio80"/><label class = "radio__label" for="myradio80">2</label>
+                                    <input class = "radio__input" type="radio" name="q27" value="3" id = "myradio81"/><label class = "radio__label" for="myradio81">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I sense when situations are spiritually unhealthy
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q28" value="1" id = "myradio82"/><label class = "radio__label" for="myradio82">1</label> 
+                                    <input class = "radio__input" type="radio" name="q28" value="2" id = "myradio83"/><label class = "radio__label" for="myradio83">2</label>
+                                    <input class = "radio__input" type="radio" name="q28" value="3" id = "myradio84"/><label class = "radio__label" for="myradio84">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I am greatly motivated by seeing people who don't know God be saved
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q29" value="1" id = "myradio85"/><label class = "radio__label" for="myradio85">1</label> 
+                                    <input class = "radio__input" type="radio" name="q29" value="2" id = "myradio86"/><label class = "radio__label" for="myradio86">2</label>
+                                    <input class = "radio__input" type="radio" name="q29" value="3" id = "myradio87"/><label class = "radio__label" for="myradio87">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I come across as loving and caring
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q30" value="1" id = "myradio88"/><label class = "radio__label" for="myradio88">1</label> 
+                                    <input class = "radio__input" type="radio" name="q30" value="2" id = "myradio89"/><label class = "radio__label" for="myradio89">2</label>
+                                    <input class = "radio__input" type="radio" name="q30" value="3" id = "myradio90"/><label class = "radio__label" for="myradio90">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                        </div>
+                        <div id = "set4" class = "set1 hide">
+                            <li>Asking God for a list of seemingly impossible things is exciting to me
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q31" value="1" id = "myradio91"/><label class = "radio__label" for="myradio91">1</label> 
+                                    <input class = "radio__input" type="radio" name="q31" value="2" id = "myradio92"/><label class = "radio__label" for="myradio92">2</label>
+                                    <input class = "radio__input" type="radio" name="q31" value="3" id = "myradio93"/><label class = "radio__label" for="myradio93">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>I find ways to give offerings above my tithe
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q32" value="1" id = "myradio94"/><label class = "radio__label" for="myradio94">1</label> 
+                                    <input class = "radio__input" type="radio" name="q32" value="2" id = "myradio95"/><label class = "radio__label" for="myradio95">2</label>
+                                    <input class = "radio__input" type="radio" name="q32" value="3" id = "myradio96"/><label class = "radio__label" for="myradio96">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>I believe miraculous healing is possible and still happens
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q33" value="1" id = "myradio97"/><label class = "radio__label" for="myradio97">1</label> 
+                                    <input class = "radio__input" type="radio" name="q33" value="2" id = "myradio98"/><label class = "radio__label" for="myradio98">2</label>
+                                    <input class = "radio__input" type="radio" name="q33" value="3" id = "myradio99"/><label class = "radio__label" for="myradio99">3</label> 
+                                </div>
+                                <br><br><br>  
+                            </li>
+                            <li>Helping others is one of my greatest motivations
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q34" value="1" id = "myradio100"/><label class = "radio__label" for="myradio100">1</label> 
+                                    <input class = "radio__input" type="radio" name="q34" value="2" id = "myradio101"/><label class = "radio__label" for="myradio101">2</label>
+                                    <input class = "radio__input" type="radio" name="q34" value="3" id = "myradio102"/><label class = "radio__label" for="myradio102">3</label> 
+                                </div>
+                                <br><br><br>  
+                            </li>
+                            <li>Creating a warm and welcoming environment is important to me
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q35" value="1" id = "myradio103"/><label class = "radio__label" for="myradio103">1</label> 
+                                    <input class = "radio__input" type="radio" name="q35" value="2" id = "myradio104"/><label class = "radio__label" for="myradio104">2</label>
+                                    <input class = "radio__input" type="radio" name="q35" value="3" id = "myradio105"/><label class = "radio__label" for="myradio105">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>I am burdened to pray for situations affecting the world
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q36" value="1" id = "myradio106"/><label class = "radio__label" for="myradio106">1</label> 
+                                    <input class = "radio__input" type="radio" name="q36" value="2" id = "myradio107"/><label class = "radio__label" for="myradio107">2</label>
+                                    <input class = "radio__input" type="radio" name="q36" value="3" id = "myradio108"/><label class = "radio__label" for="myradio108">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>People come to me to learn more about God and the Bible
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q37" value="1" id = "myradio109"/><label class = "radio__label" for="myradio109">1</label> 
+                                    <input class = "radio__input" type="radio" name="q37" value="2" id = "myradio110"/><label class = "radio__label" for="myradio110">2</label>
+                                    <input class = "radio__input" type="radio" name="q37" value="3" id = "myradio111"/><label class = "radio__label" for="myradio111">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>I prefer to take the lead whenever possible
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q38" value="1" id = "myradio112"/><label class = "radio__label" for="myradio112">1</label> 
+                                    <input class = "radio__input" type="radio" name="q38" value="2" id = "myradio113"/><label class = "radio__label" for="myradio113">2</label>
+                                    <input class = "radio__input" type="radio" name="q38" value="3" id = "myradio114"/><label class = "radio__label" for="myradio114">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>I am very sensitive to sad stories
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q39" value="1" id = "myradio115"/><label class = "radio__label" for="myradio115">1</label> 
+                                    <input class = "radio__input" type="radio" name="q39" value="2" id = "myradio116"/><label class = "radio__label" for="myradio116">2</label>
+                                    <input class = "radio__input" type="radio" name="q39" value="3" id = "myradio117"/><label class = "radio__label" for="myradio117">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>Miracles often happen when I'm nearby
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q40" value="1" id = "myradio118"/><label class = "radio__label" for="myradio118">1</label> 
+                                    <input class = "radio__input" type="radio" name="q40" value="2" id = "myradio119"/><label class = "radio__label" for="myradio119">2</label>
+                                    <input class = "radio__input" type="radio" name="q40" value="3" id = "myradio120"/><label class = "radio__label" for="myradio120">3</label> 
+                                </div>
+                                <br><br><br> 
+                        </div>
+                        <div id = "set5" class = "set1 hide">
+                            <li>The idea of living in another country to benefit the Gospel is exciting to me
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q41" value="1" id = "myradio121"/><label class = "radio__label" for="myradio121">1</label> 
+                                    <input class = "radio__input" type="radio" name="q41" value="2" id = "myradio122"/><label class = "radio__label" for="myradio122">2</label>
+                                    <input class = "radio__input" type="radio" name="q41" value="3" id = "myradio123"/><label class = "radio__label" for="myradio123">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I desire to serve the church through worship
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q42" value="1" id = "myradio124"/><label class = "radio__label" for="myradio124">1</label> 
+                                    <input class = "radio__input" type="radio" name="q42" value="2" id = "myradio125"/><label class = "radio__label" for="myradio125">2</label>
+                                    <input class = "radio__input" type="radio" name="q42" value="3" id = "myradio126"/><label class = "radio__label" for="myradio126">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I enjoy connecting, caring for, and coaching others
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q43" value="1" id = "myradio127"/><label class = "radio__label" for="myradio127">1</label> 
+                                    <input class = "radio__input" type="radio" name="q43" value="2" id = "myradio128"/><label class = "radio__label" for="myradio128">2</label>
+                                    <input class = "radio__input" type="radio" name="q43" value="3" id = "myradio129"/><label class = "radio__label" for="myradio129">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>Confronting someone about a sin in their life is important to me
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q44" value="1" id = "myradio130"/><label class = "radio__label" for="myradio130">1</label> 
+                                    <input class = "radio__input" type="radio" name="q44" value="2" id = "myradio131"/><label class = "radio__label" for="myradio131">2</label>
+                                    <input class = "radio__input" type="radio" name="q44" value="3" id = "myradio132"/><label class = "radio__label" for="myradio132">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>It bothers me when people sit around and do nothing
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q45" value="1" id = "myradio133"/><label class = "radio__label" for="myradio133">1</label> 
+                                    <input class = "radio__input" type="radio" name="q45" value="2" id = "myradio134"/><label class = "radio__label" for="myradio134">2</label>
+                                    <input class = "radio__input" type="radio" name="q45" value="3" id = "myradio135"/><label class = "radio__label" for="myradio135">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I share Biblical truth with others to help them grow
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q46" value="1" id = "myradio136"/><label class = "radio__label" for="myradio136">1</label> 
+                                    <input class = "radio__input" type="radio" name="q46" value="2" id = "myradio137"/><label class = "radio__label" for="myradio137">2</label>
+                                    <input class = "radio__input" type="radio" name="q46" value="3" id = "myradio138"/><label class = "radio__label" for="myradio138">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I pray in tongues daily
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q47" value="1" id = "myradio139"/><label class = "radio__label" for="myradio139">1</label> 
+                                    <input class = "radio__input" type="radio" name="q47" value="2" id = "myradio140"/><label class = "radio__label" for="myradio140">2</label>
+                                    <input class = "radio__input" type="radio" name="q47" value="3" id = "myradio141"/><label class = "radio__label" for="myradio141">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>When I study Scripture, I receive unique insights from God
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q48" value="1" id = "myradio142"/><label class = "radio__label" for="myradio142">1</label> 
+                                    <input class = "radio__input" type="radio" name="q48" value="2" id = "myradio143"/><label class = "radio__label" for="myradio143">2</label>
+                                    <input class = "radio__input" type="radio" name="q48" value="3" id = "myradio144"/><label class = "radio__label" for="myradio144">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>Creating a task list is easy and enjoyable for me
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q49" value="1" id = "myradio145"/><label class = "radio__label" for="myradio145">1</label> 
+                                    <input class = "radio__input" type="radio" name="q49" value="2" id = "myradio146"/><label class = "radio__label" for="myradio146">2</label>
+                                    <input class = "radio__input" type="radio" name="q49" value="3" id = "myradio147"/><label class = "radio__label" for="myradio147">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I am attracted to ministries that start new churches
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q50" value="1" id = "myradio148"/><label class = "radio__label" for="myradio148">1</label> 
+                                    <input class = "radio__input" type="radio" name="q50" value="2" id = "myradio149"/><label class = "radio__label" for="myradio149">2</label>
+                                    <input class = "radio__input" type="radio" name="q50" value="3" id = "myradio150"/><label class = "radio__label" for="myradio150">3</label> 
+                                </div>
+                                <br><br><br>
+                        </div>
+                        <div id = "set6" class = "set1 hide">
+                            <li>Building something with my hands is very satisfying to me
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q51" value="1" id = "myradio151"/><label class = "radio__label" for="myradio151">1</label> 
+                                    <input class = "radio__input" type="radio" name="q51" value="2" id = "myradio152"/><label class = "radio__label" for="myradio152">2</label>
+                                    <input class = "radio__input" type="radio" name="q51" value="3" id = "myradio153"/><label class = "radio__label" for="myradio153">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I can pinpoint issues or problems quickly
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q52" value="1" id = "myradio154"/><label class = "radio__label" for="myradio154">1</label> 
+                                    <input class = "radio__input" type="radio" name="q52" value="2" id = "myradio155"/><label class = "radio__label" for="myradio155">2</label>
+                                    <input class = "radio__input" type="radio" name="q52" value="3" id = "myradio156"/><label class = "radio__label" for="myradio156">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>Sharing the Gospel with someone I do not know is exciting and natural for me
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q53" value="1" id = "myradio157"/><label class = "radio__label" for="myradio157">1</label> 
+                                    <input class = "radio__input" type="radio" name="q53" value="2" id = "myradio158"/><label class = "radio__label" for="myradio158">2</label>
+                                    <input class = "radio__input" type="radio" name="q53" value="3" id = "myradio159"/><label class = "radio__label" for="myradio159">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I look for ways to encourage other people
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q54" value="1" id = "myradio160"/><label class = "radio__label" for="myradio160">1</label> 
+                                    <input class = "radio__input" type="radio" name="q54" value="2" id = "myradio161"/><label class = "radio__label" for="myradio161">2</label>
+                                    <input class = "radio__input" type="radio" name="q54" value="3" id = "myradio162"/><label class = "radio__label" for="myradio162">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I trust that God has my back in every situation
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q55" value="1" id = "myradio163"/><label class = "radio__label" for="myradio163">1</label> 
+                                    <input class = "radio__input" type="radio" name="q55" value="2" id = "myradio164"/><label class = "radio__label" for="myradio164">2</label>
+                                    <input class = "radio__input" type="radio" name="q55" value="3" id = "myradio165"/><label class = "radio__label" for="myradio165">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I want to make more money so that I can give more
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q56" value="1" id = "myradio166"/><label class = "radio__label" for="myradio166">1</label> 
+                                    <input class = "radio__input" type="radio" name="q56" value="2" id = "myradio167"/><label class = "radio__label" for="myradio167">2</label>
+                                    <input class = "radio__input" type="radio" name="q56" value="3" id = "myradio168"/><label class = "radio__label" for="myradio168">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>God has used me to bring healing to those who are sick
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q57" value="1" id = "myradio169"/><label class = "radio__label" for="myradio169">1</label> 
+                                    <input class = "radio__input" type="radio" name="q57" value="2" id = "myradio170"/><label class = "radio__label" for="myradio170">2</label>
+                                    <input class = "radio__input" type="radio" name="q57" value="3" id = "myradio171"/><label class = "radio__label" for="myradio171">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>Being a part of the process is fulfilling to me 
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q58" value="1" id = "myradio172"/><label class = "radio__label" for="myradio172">1</label> 
+                                    <input class = "radio__input" type="radio" name="q58" value="2" id = "myradio173"/><label class = "radio__label" for="myradio173">2</label>
+                                    <input class = "radio__input" type="radio" name="q58" value="3" id = "myradio174"/><label class = "radio__label" for="myradio174">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I tend to make total strangers feel at home
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q59" value="1" id = "myradio175"/><label class = "radio__label" for="myradio175">1</label> 
+                                    <input class = "radio__input" type="radio" name="q59" value="2" id = "myradio176"/><label class = "radio__label" for="myradio176">2</label>
+                                    <input class = "radio__input" type="radio" name="q59" value="3" id = "myradio177"/><label class = "radio__label" for="myradio177">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>People often ask me to pray for them
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q60" value="1" id = "myradio178"/><label class = "radio__label" for="myradio178">1</label> 
+                                    <input class = "radio__input" type="radio" name="q60" value="2" id = "myradio179"/><label class = "radio__label" for="myradio179">2</label>
+                                    <input class = "radio__input" type="radio" name="q60" value="3" id = "myradio180"/><label class = "radio__label" for="myradio180">3</label> 
+                                </div>
+                                <br><br><br>
+                        </div>
+                        <div id = "set7" class = "set1 hide">
+                            <li>I enjoy knowing Biblical details and helping others understand them too
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q61" value="1" id = "myradio181"/><label class = "radio__label" for="myradio181">1</label> 
+                                    <input class = "radio__input" type="radio" name="q61" value="2" id = "myradio182"/><label class = "radio__label" for="myradio182">2</label>
+                                    <input class = "radio__input" type="radio" name="q61" value="3" id = "myradio183"/><label class = "radio__label" for="myradio183">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I delegate responsibilities to accomplish tasks
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q62" value="1" id = "myradio184"/><label class = "radio__label" for="myradio184">1</label> 
+                                    <input class = "radio__input" type="radio" name="q62" value="2" id = "myradio185"/><label class = "radio__label" for="myradio185">2</label>
+                                    <input class = "radio__input" type="radio" name="q62" value="3" id = "myradio186"/><label class = "radio__label" for="myradio186">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I am motivated to help people in need
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q63" value="1" id = "myradio187"/><label class = "radio__label" for="myradio187">1</label> 
+                                    <input class = "radio__input" type="radio" name="q63" value="2" id = "myradio188"/><label class = "radio__label" for="myradio188">2</label>
+                                    <input class = "radio__input" type="radio" name="q63" value="3" id = "myradio189"/><label class = "radio__label" for="myradio189">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I have a constant hunger to see God's miraculous power
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q64" value="1" id = "myradio190"/><label class = "radio__label" for="myradio190">1</label> 
+                                    <input class = "radio__input" type="radio" name="q64" value="2" id = "myradio191"/><label class = "radio__label" for="myradio191">2</label>
+                                    <input class = "radio__input" type="radio" name="q64" value="3" id = "myradio192"/><label class = "radio__label" for="myradio192">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I focus a lot on reaching the world for Christ
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q65" value="1" id = "myradio193"/><label class = "radio__label" for="myradio193">1</label> 
+                                    <input class = "radio__input" type="radio" name="q65" value="2" id = "myradio194"/><label class = "radio__label" for="myradio194">2</label>
+                                    <input class = "radio__input" type="radio" name="q65" value="3" id = "myradio195"/><label class = "radio__label" for="myradio195">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I gain my deepest satisfaction through leading others in vocal or instrumental worship
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q66" value="1" id = "myradio196"/><label class = "radio__label" for="myradio196">1</label> 
+                                    <input class = "radio__input" type="radio" name="q66" value="2" id = "myradio197"/><label class = "radio__label" for="myradio197">2</label>
+                                    <input class = "radio__input" type="radio" name="q66" value="3" id = "myradio198"/><label class = "radio__label" for="myradio198">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I enjoy helping people who are going through a difficult time
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q67" value="1" id = "myradio199"/><label class = "radio__label" for="myradio199">1</label> 
+                                    <input class = "radio__input" type="radio" name="q67" value="2" id = "myradio200"/><label class = "radio__label" for="myradio200">2</label>
+                                    <input class = "radio__input" type="radio" name="q67" value="3" id = "myradio201"/><label class = "radio__label" for="myradio201">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I enjoy hearing passionate and clear preaching of God's Word
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q68" value="1" id = "myradio202"/><label class = "radio__label" for="myradio202">1</label> 
+                                    <input class = "radio__input" type="radio" name="q68" value="2" id = "myradio203"/><label class = "radio__label" for="myradio203">2</label>
+                                    <input class = "radio__input" type="radio" name="q68" value="3" id = "myradio204"/><label class = "radio__label" for="myradio204">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>I like to do small things that others overlook
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q69" value="1" id = "myradio205"/><label class = "radio__label" for="myradio205">1</label> 
+                                    <input class = "radio__input" type="radio" name="q69" value="2" id = "myradio206"/><label class = "radio__label" for="myradio206">2</label>
+                                    <input class = "radio__input" type="radio" name="q69" value="3" id = "myradio207"/><label class = "radio__label" for="myradio207">3</label> 
+                                </div>
+                                <br><br><br> 
+                            </li>
+                            <li>I prefer to teach and study the bible topically rather than verse by verse
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q70" value="1" id = "myradio208"/><label class = "radio__label" for="myradio208">1</label> 
+                                    <input class = "radio__input" type="radio" name="q70" value="2" id = "myradio209"/><label class = "radio__label" for="myradio209">2</label>
+                                    <input class = "radio__input" type="radio" name="q70" value="3" id = "myradio210"/><label class = "radio__label" for="myradio210">3</label> 
+                                </div>
+                                <br><br><br>
+                        </div>
+                        <div id = "set8" class = "set1 hide">
+                            <li>Praying in tongues is encouraging and important to me 
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q71" value="1" id = "myradio211"/><label class = "radio__label" for="myradio211">1</label> 
+                                    <input class = "radio__input" type="radio" name="q71" value="2" id = "myradio212"/><label class = "radio__label" for="myradio212">2</label>
+                                    <input class = "radio__input" type="radio" name="q71" value="3" id = "myradio213"/><label class = "radio__label" for="myradio213">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                            <li>When faced with difficulty, I tend to make wise decisions
+                                <br /><br>
+                                <div class = "radioinputs">
+                                    <input class = "radio__input" type="radio" name="q72" value="1" id = "myradio214"/><label class = "radio__label" for="myradio214">1</label> 
+                                    <input class = "radio__input" type="radio" name="q72" value="2" id = "myradio215"/><label class = "radio__label" for="myradio215">2</label>
+                                    <input class = "radio__input" type="radio" name="q72" value="3" id = "myradio216"/><label class = "radio__label" for="myradio216">3</label> 
+                                </div>
+                                <br><br><br>
+                            </li>
+                        </div>
+                    </ol>
+                    <p id="gift_error_message" class="hide" style="color: red; font-size: 20px; margin: 10px;">
+                        Oh no, it looks like you may have missed an answer. Please go back to check that all prompts have a response before you proceed.
+                    </p>
+                </div>
+                <div class = "controls">
+                    <button id = "back_button" class = "back_button btn hide" onclick="back()">BACK</button> 
+                    <button id = "next_button" class = "next_button btn" onclick="next()">NEXT</button>   
+                    <button id = "get_results" class = "btn hide" onclick = "getresults()">Get Results</button> 
+                </div>
+                <div class = "progressbar">
+                    <p id = "thisone"></p>
+                </div>
+                <br>  
+            </div>
+            
+        </div>
+    </div>
+    <div id = "endpage" class = "hide">
+        <p style="padding: 10px; text-align: center;">Please <b>write down or screenshot</b> your top 3 gifts. You'll be entering these into your Growth Track Connection Form later.</p>
+        <div>
+            <h1 id = "results-here">Your top three spirtitual gifts are:</h1>
+        </div>
+        <br>
+        <div id = "topthree">
+            <div id ="result1" class = "result">
+                <div id = "explanation1" class = "explanation"></div>
+            </div>
+            <div id = "result2" class = "result">
+                <div id ="explanation2" class = "explanation"></div>
+            </div>
+            <div id = "result3" class = "result">
+                <div id = "explanation3" class = "explanation"></div>
+            </div>
+        </div>
+        <div class ="allthat">
+            <p class = 'allthat'>
+                To see all of your scores, <span><button onclick="fullresults()" class = "btn">CLICK HERE</button></span>
+            </p>
+            <div id = "allscores" class = "hide"></div>
+        </div>
+        <br>
+        <div id="DISClaimer" class = "center_text">
+            For more in-depth information about these values, refer to the Growth Track handbook.<br>
+            Once you have recorded your scores, close this tab and return to the <a style="color: #8dc63f; cursor: pointer;" href="">step TWO</a> page to enter your results.
+         </div>
+         <br>
+         <br>
+         <br>
+    </div>
+</body>
+</html>
