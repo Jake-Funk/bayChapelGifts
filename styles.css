@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     background: #f3f3f4;
+    color: #333333
 }
 
 /*----------- Content styles -----------*/
@@ -102,7 +103,7 @@ body {
     width: 100%;
     padding: 8px 14px;
     font-size: 1.75vh;
-    color: black;
+    color: #333333;
     background: #ecedf3;
     cursor: pointer;
     transition: 0.5s;
@@ -113,7 +114,7 @@ body {
 
 .radio__input:checked + .radio__label {
     background: hsl(107, 30%, 51%);
-    color: white;
+    color: #f3f3f4;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }
 .dgrid {
@@ -122,73 +123,9 @@ body {
 .dradio__input {
     display: none;
 }
-/*.dradioinputs {
 
-}*/
 
-.dradio__label {
-    display: inline-block;
-    box-sizing: content-box;
-    min-width: 3vh;
-    font-size: 3vh;
-    color: black;
-    background: white;
-    cursor: pointer;
-    transition: 0.5s;
-    border-radius: 50%;
-    box-shadow: 1px 1px rgba(0, 0, 0, 0.349);
-}
-.dradio__label:nth-of-type(n) {
-    border: solid 2px hsl(4, 50%, 40%);
-    padding: 5vw;
 
-}
-.dradio__input:checked + .dradio__label:nth-of-type(n) {
-    background: hsl(4, 50%, 40%);
-    color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    border: solid 1px hsl(4, 50%, 40%);
-}
-.dradio__label:nth-of-type(2n) {
-    border: solid 2px hsl(4, 25%, 40%);
-    padding: 4vw;
-}
-.dradio__input:checked + .dradio__label:nth-of-type(2n) {
-    background: hsl(4, 25%, 40%);
-    color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    border: solid 1px hsl(4, 25%, 40%);
-}
-.dradio__label:nth-of-type(3n) {
-    border: solid 2px hsl(4, 0%, 70%);
-    padding: 3vw;
-}
-.dradio__input:checked + .dradio__label:nth-of-type(3n) {
-    background: hsl(4, 0%, 70%);
-    color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    border: solid 1px hsl(4, 0%, 70%);
-}
-.dradio__label:nth-of-type(4n) {
-    border: solid 2px hsl(107, 25%, 40%);
-    padding: 4vw;
-}
-.dradio__input:checked + .dradio__label:nth-of-type(4n) {
-    background: hsl(107, 25%, 40%);
-    color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    border: solid 1px hsl(107, 25%, 40%);
-}
-.dradio__label:nth-of-type(5n) {
-    border: solid 2px hsl(107, 50%, 40%);
-    padding: 5vw;
-}
-.dradio__input:checked + .dradio__label:nth-of-type(5n) {
-    background: hsl(107, 50%, 40%);
-    color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-    border: solid 1px hsl(107, 50%, 40%);
-}
 .question-list {
     text-align: center;
     list-style-type: none;
@@ -203,16 +140,6 @@ body {
     margin: 0;
     padding: 0;
     font-size: 18px;
-}
-
-/*----------  Navbar styles  ----------*/
-
-.navbar {
-    width: 100%;
-    background: black;
-}
-.navbar img {
-    padding: 1vh 4vw;
 }
 
 .content {
@@ -251,8 +178,8 @@ button {
     padding: 15px 20px;
     border-radius: 500px;
     border: none;
-    background: black;
-    color: white;
+    background: #292929;
+    color: #f3f3f4;
     font-size: 18px;
 }
 
@@ -343,8 +270,6 @@ button {
     max-width: 500px;
 }
 #allscores {
-   /*columns: 130px; 
-   column-gap: 80px;*/
    text-align: center;
 }
 .allthat {
@@ -375,7 +300,7 @@ button {
 }
 @media (min-width: 1026px) {
     .top_progress_bar {
-        color: black;
+        color: #333333;
         padding-top: 1vh;
         padding-bottom: 1vh;
         height: auto;
