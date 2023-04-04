@@ -345,15 +345,17 @@ button {
     font-size: 100%;
 }
 
-#navbar-buffer {
-    display: static;
+.navbar-buffer {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 70px;
     background-color: #333333;
 }
 
 @media screen and (max-width: 991px){
-#navbar-buffer {
+.navbar-buffer {
     display: none;
 }
 }
