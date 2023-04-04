@@ -354,8 +354,15 @@ button {
     background-color: #333333;
 }
 
+#giftsassesspage {
+    margin-top: 90px;
+}
+
 @media screen and (max-width: 991px){
 .navbar-buffer {
     display: none;
+}
+#giftsassesspage {
+    margin-top: auto;
 }
 }
